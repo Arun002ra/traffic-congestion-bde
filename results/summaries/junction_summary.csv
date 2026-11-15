@@ -1,0 +1,13 @@
+junction_id,junction_name,zone,records,avg_vehicles,avg_speed,avg_occupancy,avg_queue_m,congestion_rate_pct
+1,Central Bus Stand,Central,17280,98.9,30.18,31.53,29.2,21.86
+2,Chathiram Bus Stand,Central,17280,86.3,29.2,29.59,24.1,19.52
+3,Palakkarai,Central,17280,75.6,26.2,28.6,21.6,18.63
+4,Thillai Nagar,Commercial,17280,78.7,33.03,28.0,20.6,17.69
+5,Cantonment,Commercial,17280,84.4,35.17,26.67,18.0,16.59
+6,Srirangam Gate,Temple,17280,67.2,28.46,26.41,17.1,16.21
+9,Ariyamangalam,Industrial,17280,87.2,41.2,24.29,12.7,13.21
+10,Ponmalai,Industrial,17280,75.6,40.19,22.78,9.9,11.05
+7,Woraiyur,Residential,17280,54.0,35.28,21.5,7.7,9.46
+12,Samayapuram Toll,Highway,17280,81.1,53.74,20.01,6.3,7.55
+8,Tennur,Residential,17280,46.4,37.83,19.5,4.4,5.37
+11,Airport Road,Suburban,17280,52.9,50.71,17.09,2.3,2.75

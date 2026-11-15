@@ -1,0 +1,1 @@
+{"class":"org.apache.spark.ml.feature.OneHotEncoderModel","timestamp":1794722832719,"sparkVersion":"4.3.0","uid":"OneHotEncoder_48dde85c9de4","paramMap":{"inputCols":["weather_i","zone_i"],"outputCols":["weather_oh","zone_oh"]},"defaultParamMap":{"dropLast":true,"handleInvalid":"error","outputCol":"OneHotEncoder_48dde85c9de4__output"}}

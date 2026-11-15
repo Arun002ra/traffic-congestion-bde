@@ -1,0 +1,289 @@
+junction_name,hour,avg_vehicles
+Airport Road,0,19.9
+Airport Road,1,17.3
+Airport Road,2,16.1
+Airport Road,3,18.6
+Airport Road,4,19.8
+Airport Road,5,22.1
+Airport Road,6,30.8
+Airport Road,7,68.7
+Airport Road,8,119.6
+Airport Road,9,129.7
+Airport Road,10,93.8
+Airport Road,11,58.1
+Airport Road,12,53.2
+Airport Road,13,54.9
+Airport Road,14,59.7
+Airport Road,15,77.1
+Airport Road,16,103.3
+Airport Road,17,132.3
+Airport Road,18,141.1
+Airport Road,19,104.3
+Airport Road,20,55.6
+Airport Road,21,23.5
+Airport Road,22,18.1
+Airport Road,23,18.3
+Ariyamangalam,0,20.8
+Ariyamangalam,1,16.0
+Ariyamangalam,2,15.7
+Ariyamangalam,3,22.9
+Ariyamangalam,4,25.2
+Ariyamangalam,5,25.2
+Ariyamangalam,6,50.9
+Ariyamangalam,7,122.7
+Ariyamangalam,8,209.8
+Ariyamangalam,9,216.8
+Ariyamangalam,10,167.4
+Ariyamangalam,11,114.7
+Ariyamangalam,12,98.1
+Ariyamangalam,13,98.3
+Ariyamangalam,14,110.4
+Ariyamangalam,15,134.8
+Ariyamangalam,16,180.7
+Ariyamangalam,17,217.2
+Ariyamangalam,18,220.6
+Ariyamangalam,19,173.2
+Ariyamangalam,20,98.7
+Ariyamangalam,21,41.1
+Ariyamangalam,22,25.0
+Ariyamangalam,23,20.8
+Cantonment,0,22.3
+Cantonment,1,20.7
+Cantonment,2,21.6
+Cantonment,3,19.3
+Cantonment,4,20.8
+Cantonment,5,28.1
+Cantonment,6,51.3
+Cantonment,7,121.8
+Cantonment,8,196.2
+Cantonment,9,203.0
+Cantonment,10,166.7
+Cantonment,11,109.3
+Cantonment,12,94.7
+Cantonment,13,97.3
+Cantonment,14,108.7
+Cantonment,15,125.9
+Cantonment,16,174.8
+Cantonment,17,206.1
+Cantonment,18,207.1
+Cantonment,19,182.8
+Cantonment,20,111.7
+Cantonment,21,43.5
+Cantonment,22,19.8
+Cantonment,23,20.5
+Central Bus Stand,0,22.6
+Central Bus Stand,1,20.4
+Central Bus Stand,2,29.4
+Central Bus Stand,3,24.9
+Central Bus Stand,4,21.7
+Central Bus Stand,5,28.0
+Central Bus Stand,6,58.5
+Central Bus Stand,7,147.3
+Central Bus Stand,8,214.8
+Central Bus Stand,9,218.5
+Central Bus Stand,10,195.7
+Central Bus Stand,11,137.6
+Central Bus Stand,12,120.4
+Central Bus Stand,13,120.1
+Central Bus Stand,14,135.6
+Central Bus Stand,15,163.3
+Central Bus Stand,16,206.3
+Central Bus Stand,17,219.1
+Central Bus Stand,18,219.1
+Central Bus Stand,19,205.8
+Central Bus Stand,20,127.6
+Central Bus Stand,21,56.5
+Central Bus Stand,22,32.4
+Central Bus Stand,23,25.5
+Chathiram Bus Stand,0,20.7
+Chathiram Bus Stand,1,20.3
+Chathiram Bus Stand,2,22.0
+Chathiram Bus Stand,3,23.8
+Chathiram Bus Stand,4,24.4
+Chathiram Bus Stand,5,25.9
+Chathiram Bus Stand,6,53.7
+Chathiram Bus Stand,7,130.4
+Chathiram Bus Stand,8,192.9
+Chathiram Bus Stand,9,196.4
+Chathiram Bus Stand,10,171.3
+Chathiram Bus Stand,11,122.1
+Chathiram Bus Stand,12,105.2
+Chathiram Bus Stand,13,105.7
+Chathiram Bus Stand,14,110.8
+Chathiram Bus Stand,15,131.8
+Chathiram Bus Stand,16,174.6
+Chathiram Bus Stand,17,196.2
+Chathiram Bus Stand,18,196.6
+Chathiram Bus Stand,19,177.3
+Chathiram Bus Stand,20,104.6
+Chathiram Bus Stand,21,46.4
+Chathiram Bus Stand,22,26.6
+Chathiram Bus Stand,23,21.7
+Palakkarai,0,18.1
+Palakkarai,1,16.5
+Palakkarai,2,14.7
+Palakkarai,3,18.6
+Palakkarai,4,20.5
+Palakkarai,5,25.4
+Palakkarai,6,51.3
+Palakkarai,7,109.5
+Palakkarai,8,172.2
+Palakkarai,9,175.3
+Palakkarai,10,146.9
+Palakkarai,11,104.7
+Palakkarai,12,92.8
+Palakkarai,13,93.1
+Palakkarai,14,98.2
+Palakkarai,15,117.8
+Palakkarai,16,155.8
+Palakkarai,17,176.9
+Palakkarai,18,176.7
+Palakkarai,19,159.9
+Palakkarai,20,93.2
+Palakkarai,21,40.1
+Palakkarai,22,21.8
+Palakkarai,23,21.9
+Ponmalai,0,20.3
+Ponmalai,1,23.3
+Ponmalai,2,19.6
+Ponmalai,3,21.0
+Ponmalai,4,22.4
+Ponmalai,5,24.3
+Ponmalai,6,38.4
+Ponmalai,7,101.0
+Ponmalai,8,175.4
+Ponmalai,9,186.1
+Ponmalai,10,138.5
+Ponmalai,11,93.4
+Ponmalai,12,83.7
+Ponmalai,13,83.6
+Ponmalai,14,93.3
+Ponmalai,15,108.8
+Ponmalai,16,154.3
+Ponmalai,17,197.1
+Ponmalai,18,198.7
+Ponmalai,19,160.0
+Ponmalai,20,87.9
+Ponmalai,21,40.2
+Ponmalai,22,26.2
+Ponmalai,23,17.9
+Samayapuram Toll,0,23.3
+Samayapuram Toll,1,24.2
+Samayapuram Toll,2,22.6
+Samayapuram Toll,3,26.9
+Samayapuram Toll,4,23.2
+Samayapuram Toll,5,27.1
+Samayapuram Toll,6,46.2
+Samayapuram Toll,7,112.4
+Samayapuram Toll,8,197.3
+Samayapuram Toll,9,209.4
+Samayapuram Toll,10,154.3
+Samayapuram Toll,11,101.3
+Samayapuram Toll,12,88.2
+Samayapuram Toll,13,91.4
+Samayapuram Toll,14,96.0
+Samayapuram Toll,15,121.5
+Samayapuram Toll,16,162.8
+Samayapuram Toll,17,215.0
+Samayapuram Toll,18,221.5
+Samayapuram Toll,19,167.8
+Samayapuram Toll,20,91.6
+Samayapuram Toll,21,37.8
+Samayapuram Toll,22,29.1
+Samayapuram Toll,23,24.6
+Srirangam Gate,0,19.9
+Srirangam Gate,1,19.2
+Srirangam Gate,2,17.0
+Srirangam Gate,3,18.9
+Srirangam Gate,4,15.8
+Srirangam Gate,5,21.3
+Srirangam Gate,6,37.3
+Srirangam Gate,7,95.3
+Srirangam Gate,8,156.8
+Srirangam Gate,9,161.5
+Srirangam Gate,10,132.9
+Srirangam Gate,11,90.7
+Srirangam Gate,12,71.5
+Srirangam Gate,13,77.1
+Srirangam Gate,14,90.3
+Srirangam Gate,15,100.5
+Srirangam Gate,16,139.6
+Srirangam Gate,17,164.2
+Srirangam Gate,18,165.4
+Srirangam Gate,19,143.3
+Srirangam Gate,20,79.2
+Srirangam Gate,21,34.4
+Srirangam Gate,22,23.8
+Srirangam Gate,23,20.7
+Tennur,0,13.4
+Tennur,1,15.2
+Tennur,2,15.3
+Tennur,3,14.4
+Tennur,4,14.0
+Tennur,5,15.2
+Tennur,6,27.3
+Tennur,7,60.6
+Tennur,8,101.5
+Tennur,9,114.0
+Tennur,10,82.6
+Tennur,11,56.5
+Tennur,12,50.8
+Tennur,13,51.4
+Tennur,14,54.4
+Tennur,15,65.1
+Tennur,16,93.1
+Tennur,17,119.1
+Tennur,18,123.6
+Tennur,19,91.6
+Tennur,20,54.0
+Tennur,21,23.8
+Tennur,22,10.5
+Tennur,23,11.8
+Thillai Nagar,0,21.4
+Thillai Nagar,1,18.8
+Thillai Nagar,2,18.5
+Thillai Nagar,3,20.8
+Thillai Nagar,4,18.7
+Thillai Nagar,5,25.4
+Thillai Nagar,6,54.4
+Thillai Nagar,7,123.5
+Thillai Nagar,8,179.6
+Thillai Nagar,9,184.5
+Thillai Nagar,10,153.4
+Thillai Nagar,11,104.0
+Thillai Nagar,12,89.5
+Thillai Nagar,13,94.2
+Thillai Nagar,14,101.7
+Thillai Nagar,15,120.7
+Thillai Nagar,16,168.4
+Thillai Nagar,17,186.4
+Thillai Nagar,18,186.4
+Thillai Nagar,19,162.3
+Thillai Nagar,20,89.4
+Thillai Nagar,21,38.2
+Thillai Nagar,22,22.3
+Thillai Nagar,23,17.0
+Woraiyur,0,15.8
+Woraiyur,1,17.0
+Woraiyur,2,16.3
+Woraiyur,3,16.6
+Woraiyur,4,14.4
+Woraiyur,5,18.5
+Woraiyur,6,30.6
+Woraiyur,7,74.1
+Woraiyur,8,127.5
+Woraiyur,9,134.7
+Woraiyur,10,105.1
+Woraiyur,11,67.7
+Woraiyur,12,59.7
+Woraiyur,13,64.0
+Woraiyur,14,70.0
+Woraiyur,15,81.3
+Woraiyur,16,107.4
+Woraiyur,17,134.7
+Woraiyur,18,141.7
+Woraiyur,19,112.6
+Woraiyur,20,61.0
+Woraiyur,21,28.9
+Woraiyur,22,17.7
+Woraiyur,23,15.4

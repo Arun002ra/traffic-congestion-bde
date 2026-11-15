@@ -1,0 +1,12 @@
+{
+  "rows_raw": 207774,
+  "duplicates": 414,
+  "null_speed": 831,
+  "negative_count": 311,
+  "rows_clean": 207360,
+  "min_ts": "2026-08-01 00:00:00",
+  "max_ts": "2026-09-29 23:55:00",
+  "junctions": 12,
+  "congested_rate_pct": 13.32,
+  "rows_features": 207288
+}

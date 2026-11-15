@@ -1,0 +1,3379 @@
+{
+  "data_quality": {
+    "rows_raw": 207774,
+    "duplicates": 414,
+    "null_speed": 831,
+    "negative_count": 311,
+    "rows_clean": 207360,
+    "min_ts": "2026-08-01 00:00:00",
+    "max_ts": "2026-09-29 23:55:00",
+    "junctions": 12,
+    "congested_rate_pct": 13.32,
+    "rows_features": 207288
+  },
+  "model_results": {
+    "info": {
+      "train_rows": 169308,
+      "test_rows": 37980,
+      "train_pos_pct": 13.65,
+      "test_pos_pct": 11.89
+    },
+    "classification": {
+      "Baseline (persistence)": {
+        "tp": 3796,
+        "tn": 32748,
+        "fp": 718,
+        "fn": 718,
+        "accuracy": 0.9622,
+        "precision": 0.8409,
+        "recall": 0.8409,
+        "f1": 0.8409,
+        "auc": null,
+        "pr_auc": null
+      },
+      "Logistic Regression": {
+        "tp": 4136,
+        "tn": 32237,
+        "fp": 1229,
+        "fn": 378,
+        "accuracy": 0.9577,
+        "precision": 0.7709,
+        "recall": 0.9163,
+        "f1": 0.8373,
+        "auc": 0.9899,
+        "pr_auc": 0.9375
+      },
+      "Random Forest": {
+        "tp": 4226,
+        "tn": 32251,
+        "fp": 1215,
+        "fn": 288,
+        "accuracy": 0.9604,
+        "precision": 0.7767,
+        "recall": 0.9362,
+        "f1": 0.849,
+        "auc": 0.9912,
+        "pr_auc": 0.9432
+      },
+      "Gradient Boosted Trees": {
+        "tp": 4207,
+        "tn": 32349,
+        "fp": 1117,
+        "fn": 307,
+        "accuracy": 0.9625,
+        "precision": 0.7902,
+        "recall": 0.932,
+        "f1": 0.8553,
+        "auc": 0.9925,
+        "pr_auc": 0.9528
+      }
+    },
+    "best": "Gradient Boosted Trees",
+    "regression": {
+      "rmse": 0.0571,
+      "mae": 0.0401,
+      "r2": 0.9124,
+      "baseline_rmse": 0.0694,
+      "baseline_mae": 0.0476
+    },
+    "features": [
+      "vehicle_count",
+      "avg_speed_kmph",
+      "occupancy_pct",
+      "queue_length_m",
+      "speed_ratio",
+      "free_flow_kmph",
+      "minute_of_day",
+      "hour",
+      "dow",
+      "is_weekend",
+      "is_holiday",
+      "is_peak",
+      "incident_flag",
+      "speed_ratio_lag1",
+      "speed_ratio_lag2",
+      "speed_ratio_lag3",
+      "count_lag1",
+      "count_lag3",
+      "count_roll30",
+      "speed_roll30",
+      "speed_trend",
+      "weather_(onehot)",
+      "zone_(onehot)"
+    ]
+  },
+  "feature_importance": {
+    "names": [
+      "vehicle_count",
+      "avg_speed_kmph",
+      "occupancy_pct",
+      "queue_length_m",
+      "speed_ratio",
+      "free_flow_kmph",
+      "minute_of_day",
+      "hour",
+      "dow",
+      "is_weekend",
+      "is_holiday",
+      "is_peak",
+      "incident_flag",
+      "speed_ratio_lag1",
+      "speed_ratio_lag2",
+      "speed_ratio_lag3",
+      "count_lag1",
+      "count_lag3",
+      "count_roll30",
+      "speed_roll30",
+      "speed_trend",
+      "weather_oh_0",
+      "weather_oh_1",
+      "weather_oh_2",
+      "zone_oh_0",
+      "zone_oh_1",
+      "zone_oh_2",
+      "zone_oh_3",
+      "zone_oh_4",
+      "zone_oh_5",
+      "zone_oh_6"
+    ],
+    "Random Forest": [
+      0.10923176773709786,
+      0.04744906079758717,
+      0.09705125989515075,
+      0.14663239467108352,
+      0.21996979622969529,
+      0.0006903900600871299,
+      0.015080768503751727,
+      0.009514613890811785,
+      0.0005856786595737075,
+      0.0005967791861757011,
+      6.597505755197176e-05,
+      0.00018808984958210566,
+      5.839482981582716e-05,
+      0.1559560346875836,
+      0.01676141749916026,
+      0.01631676612637573,
+      0.03156724915666392,
+      0.037201120396424654,
+      0.014123740320967292,
+      0.07358449227673276,
+      0.003140345992729653,
+      0.001117932591890519,
+      0.0001750124669116675,
+      0.002229968612790143,
+      0.00024006618646672234,
+      6.686079858313584e-05,
+      5.134450693137267e-05,
+      0.0001149262311444262,
+      8.912129109819565e-05,
+      8.65762643667994e-05,
+      6.205522521474128e-05
+    ],
+    "Gradient Boosted Trees": [
+      0.10920850153079921,
+      0.00960135624761094,
+      0.08912305795525971,
+      0.324652001729018,
+      0.2995993630903708,
+      0.0056803825002792385,
+      0.06226015432427656,
+      0.026127097928934157,
+      0.0024478917075663143,
+      0.010528026220520443,
+      0.0011587758407921268,
+      0.0015246060192636338,
+      0.00039899890888331894,
+      0.029355027592350803,
+      0.0017437327822500787,
+      0.0010466700881723754,
+      0.0008460543095628599,
+      0.0012261170552480905,
+      0.0011764782531972085,
+      0.002782726992138283,
+      0.0016924702281602116,
+      0.0005514648209538401,
+      6.885889346297466e-05,
+      0.015239188388542858,
+      0.0,
+      0.00046556536485472616,
+      0.0,
+      7.785727563617256e-05,
+      0.0,
+      0.0013298324590303337,
+      8.774149286457016e-05
+    ]
+  },
+  "hourly_profile": [
+    {
+      "hour": 0,
+      "avg_speed": 41.95,
+      "avg_vehicles": 19.8,
+      "avg_speed_ratio": 0.981,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "hour": 1,
+      "avg_speed": 41.96,
+      "avg_vehicles": 19.0,
+      "avg_speed_ratio": 0.981,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "hour": 2,
+      "avg_speed": 41.95,
+      "avg_vehicles": 19.2,
+      "avg_speed_ratio": 0.981,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "hour": 3,
+      "avg_speed": 41.95,
+      "avg_vehicles": 20.0,
+      "avg_speed_ratio": 0.981,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "hour": 4,
+      "avg_speed": 41.94,
+      "avg_vehicles": 19.7,
+      "avg_speed_ratio": 0.981,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "hour": 5,
+      "avg_speed": 41.93,
+      "avg_vehicles": 22.4,
+      "avg_speed_ratio": 0.98,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "hour": 6,
+      "avg_speed": 41.54,
+      "avg_vehicles": 36.8,
+      "avg_speed_ratio": 0.971,
+      "congestion_rate_pct": 0.02
+    },
+    {
+      "hour": 7,
+      "avg_speed": 37.85,
+      "avg_vehicles": 79.9,
+      "avg_speed_ratio": 0.88,
+      "congestion_rate_pct": 5.53
+    },
+    {
+      "hour": 8,
+      "avg_speed": 29.54,
+      "avg_vehicles": 126.0,
+      "avg_speed_ratio": 0.679,
+      "congestion_rate_pct": 43.0
+    },
+    {
+      "hour": 9,
+      "avg_speed": 27.99,
+      "avg_vehicles": 131.7,
+      "avg_speed_ratio": 0.642,
+      "congestion_rate_pct": 49.26
+    },
+    {
+      "hour": 10,
+      "avg_speed": 33.92,
+      "avg_vehicles": 109.5,
+      "avg_speed_ratio": 0.784,
+      "congestion_rate_pct": 20.01
+    },
+    {
+      "hour": 11,
+      "avg_speed": 38.73,
+      "avg_vehicles": 80.5,
+      "avg_speed_ratio": 0.901,
+      "congestion_rate_pct": 1.67
+    },
+    {
+      "hour": 12,
+      "avg_speed": 39.58,
+      "avg_vehicles": 75.4,
+      "avg_speed_ratio": 0.922,
+      "congestion_rate_pct": 0.51
+    },
+    {
+      "hour": 13,
+      "avg_speed": 39.18,
+      "avg_vehicles": 80.7,
+      "avg_speed_ratio": 0.912,
+      "congestion_rate_pct": 0.59
+    },
+    {
+      "hour": 14,
+      "avg_speed": 36.56,
+      "avg_vehicles": 90.6,
+      "avg_speed_ratio": 0.85,
+      "congestion_rate_pct": 3.3
+    },
+    {
+      "hour": 15,
+      "avg_speed": 34.59,
+      "avg_vehicles": 107.5,
+      "avg_speed_ratio": 0.801,
+      "congestion_rate_pct": 9.26
+    },
+    {
+      "hour": 16,
+      "avg_speed": 29.65,
+      "avg_vehicles": 138.7,
+      "avg_speed_ratio": 0.682,
+      "congestion_rate_pct": 33.63
+    },
+    {
+      "hour": 17,
+      "avg_speed": 24.24,
+      "avg_vehicles": 159.2,
+      "avg_speed_ratio": 0.553,
+      "congestion_rate_pct": 57.2
+    },
+    {
+      "hour": 18,
+      "avg_speed": 23.97,
+      "avg_vehicles": 157.5,
+      "avg_speed_ratio": 0.547,
+      "congestion_rate_pct": 59.75
+    },
+    {
+      "hour": 19,
+      "avg_speed": 30.42,
+      "avg_vehicles": 128.7,
+      "avg_speed_ratio": 0.701,
+      "congestion_rate_pct": 33.28
+    },
+    {
+      "hour": 20,
+      "avg_speed": 37.52,
+      "avg_vehicles": 75.8,
+      "avg_speed_ratio": 0.874,
+      "congestion_rate_pct": 2.75
+    },
+    {
+      "hour": 21,
+      "avg_speed": 41.52,
+      "avg_vehicles": 35.5,
+      "avg_speed_ratio": 0.97,
+      "congestion_rate_pct": 0.01
+    },
+    {
+      "hour": 22,
+      "avg_speed": 41.93,
+      "avg_vehicles": 22.5,
+      "avg_speed_ratio": 0.98,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "hour": 23,
+      "avg_speed": 41.93,
+      "avg_vehicles": 20.2,
+      "avg_speed_ratio": 0.98,
+      "congestion_rate_pct": 0.0
+    }
+  ],
+  "junction_summary": [
+    {
+      "junction_id": 1,
+      "junction_name": "Central Bus Stand",
+      "zone": "Central",
+      "records": 17280,
+      "avg_vehicles": 98.9,
+      "avg_speed": 30.18,
+      "avg_occupancy": 31.53,
+      "avg_queue_m": 29.2,
+      "congestion_rate_pct": 21.86
+    },
+    {
+      "junction_id": 2,
+      "junction_name": "Chathiram Bus Stand",
+      "zone": "Central",
+      "records": 17280,
+      "avg_vehicles": 86.3,
+      "avg_speed": 29.2,
+      "avg_occupancy": 29.59,
+      "avg_queue_m": 24.1,
+      "congestion_rate_pct": 19.52
+    },
+    {
+      "junction_id": 3,
+      "junction_name": "Palakkarai",
+      "zone": "Central",
+      "records": 17280,
+      "avg_vehicles": 75.6,
+      "avg_speed": 26.2,
+      "avg_occupancy": 28.6,
+      "avg_queue_m": 21.6,
+      "congestion_rate_pct": 18.63
+    },
+    {
+      "junction_id": 4,
+      "junction_name": "Thillai Nagar",
+      "zone": "Commercial",
+      "records": 17280,
+      "avg_vehicles": 78.7,
+      "avg_speed": 33.03,
+      "avg_occupancy": 28.0,
+      "avg_queue_m": 20.6,
+      "congestion_rate_pct": 17.69
+    },
+    {
+      "junction_id": 5,
+      "junction_name": "Cantonment",
+      "zone": "Commercial",
+      "records": 17280,
+      "avg_vehicles": 84.4,
+      "avg_speed": 35.17,
+      "avg_occupancy": 26.67,
+      "avg_queue_m": 18.0,
+      "congestion_rate_pct": 16.59
+    },
+    {
+      "junction_id": 6,
+      "junction_name": "Srirangam Gate",
+      "zone": "Temple",
+      "records": 17280,
+      "avg_vehicles": 67.2,
+      "avg_speed": 28.46,
+      "avg_occupancy": 26.41,
+      "avg_queue_m": 17.1,
+      "congestion_rate_pct": 16.21
+    },
+    {
+      "junction_id": 9,
+      "junction_name": "Ariyamangalam",
+      "zone": "Industrial",
+      "records": 17280,
+      "avg_vehicles": 87.2,
+      "avg_speed": 41.2,
+      "avg_occupancy": 24.29,
+      "avg_queue_m": 12.7,
+      "congestion_rate_pct": 13.21
+    },
+    {
+      "junction_id": 10,
+      "junction_name": "Ponmalai",
+      "zone": "Industrial",
+      "records": 17280,
+      "avg_vehicles": 75.6,
+      "avg_speed": 40.19,
+      "avg_occupancy": 22.78,
+      "avg_queue_m": 9.9,
+      "congestion_rate_pct": 11.05
+    },
+    {
+      "junction_id": 7,
+      "junction_name": "Woraiyur",
+      "zone": "Residential",
+      "records": 17280,
+      "avg_vehicles": 54.0,
+      "avg_speed": 35.28,
+      "avg_occupancy": 21.5,
+      "avg_queue_m": 7.7,
+      "congestion_rate_pct": 9.46
+    },
+    {
+      "junction_id": 12,
+      "junction_name": "Samayapuram Toll",
+      "zone": "Highway",
+      "records": 17280,
+      "avg_vehicles": 81.1,
+      "avg_speed": 53.74,
+      "avg_occupancy": 20.01,
+      "avg_queue_m": 6.3,
+      "congestion_rate_pct": 7.55
+    },
+    {
+      "junction_id": 8,
+      "junction_name": "Tennur",
+      "zone": "Residential",
+      "records": 17280,
+      "avg_vehicles": 46.4,
+      "avg_speed": 37.83,
+      "avg_occupancy": 19.5,
+      "avg_queue_m": 4.4,
+      "congestion_rate_pct": 5.37
+    },
+    {
+      "junction_id": 11,
+      "junction_name": "Airport Road",
+      "zone": "Suburban",
+      "records": 17280,
+      "avg_vehicles": 52.9,
+      "avg_speed": 50.71,
+      "avg_occupancy": 17.09,
+      "avg_queue_m": 2.3,
+      "congestion_rate_pct": 2.75
+    }
+  ],
+  "weather_impact": [
+    {
+      "weather": "Rain",
+      "records": 20400,
+      "avg_speed": 26.36,
+      "avg_speed_ratio": 0.606,
+      "congestion_rate_pct": 41.79
+    },
+    {
+      "weather": "Cloudy",
+      "records": 121296,
+      "avg_speed": 38.08,
+      "avg_speed_ratio": 0.886,
+      "congestion_rate_pct": 9.88
+    },
+    {
+      "weather": "Clear",
+      "records": 65664,
+      "avg_speed": 37.58,
+      "avg_speed_ratio": 0.874,
+      "congestion_rate_pct": 10.84
+    }
+  ],
+  "daily_trend": [
+    {
+      "date": "2026-08-01",
+      "congestion_rate_pct": 1.56,
+      "avg_speed": 40.63
+    },
+    {
+      "date": "2026-08-02",
+      "congestion_rate_pct": 0.95,
+      "avg_speed": 40.69
+    },
+    {
+      "date": "2026-08-03",
+      "congestion_rate_pct": 23.26,
+      "avg_speed": 34.1
+    },
+    {
+      "date": "2026-08-04",
+      "congestion_rate_pct": 23.35,
+      "avg_speed": 33.85
+    },
+    {
+      "date": "2026-08-05",
+      "congestion_rate_pct": 19.18,
+      "avg_speed": 35.11
+    },
+    {
+      "date": "2026-08-06",
+      "congestion_rate_pct": 20.72,
+      "avg_speed": 34.26
+    },
+    {
+      "date": "2026-08-07",
+      "congestion_rate_pct": 22.74,
+      "avg_speed": 33.86
+    },
+    {
+      "date": "2026-08-08",
+      "congestion_rate_pct": 2.86,
+      "avg_speed": 39.03
+    },
+    {
+      "date": "2026-08-09",
+      "congestion_rate_pct": 0.32,
+      "avg_speed": 40.84
+    },
+    {
+      "date": "2026-08-10",
+      "congestion_rate_pct": 15.77,
+      "avg_speed": 35.92
+    },
+    {
+      "date": "2026-08-11",
+      "congestion_rate_pct": 16.87,
+      "avg_speed": 35.77
+    },
+    {
+      "date": "2026-08-12",
+      "congestion_rate_pct": 20.31,
+      "avg_speed": 34.35
+    },
+    {
+      "date": "2026-08-13",
+      "congestion_rate_pct": 21.85,
+      "avg_speed": 34.27
+    },
+    {
+      "date": "2026-08-14",
+      "congestion_rate_pct": 21.56,
+      "avg_speed": 34.13
+    },
+    {
+      "date": "2026-08-15",
+      "congestion_rate_pct": 0.0,
+      "avg_speed": 41.56
+    },
+    {
+      "date": "2026-08-16",
+      "congestion_rate_pct": 0.2,
+      "avg_speed": 40.94
+    },
+    {
+      "date": "2026-08-17",
+      "congestion_rate_pct": 15.6,
+      "avg_speed": 35.98
+    },
+    {
+      "date": "2026-08-18",
+      "congestion_rate_pct": 16.9,
+      "avg_speed": 35.81
+    },
+    {
+      "date": "2026-08-19",
+      "congestion_rate_pct": 17.13,
+      "avg_speed": 35.8
+    },
+    {
+      "date": "2026-08-20",
+      "congestion_rate_pct": 17.33,
+      "avg_speed": 35.89
+    },
+    {
+      "date": "2026-08-21",
+      "congestion_rate_pct": 20.2,
+      "avg_speed": 34.45
+    },
+    {
+      "date": "2026-08-22",
+      "congestion_rate_pct": 0.43,
+      "avg_speed": 40.63
+    },
+    {
+      "date": "2026-08-23",
+      "congestion_rate_pct": 4.37,
+      "avg_speed": 38.74
+    },
+    {
+      "date": "2026-08-24",
+      "congestion_rate_pct": 22.45,
+      "avg_speed": 33.99
+    },
+    {
+      "date": "2026-08-25",
+      "congestion_rate_pct": 21.7,
+      "avg_speed": 34.18
+    },
+    {
+      "date": "2026-08-26",
+      "congestion_rate_pct": 15.83,
+      "avg_speed": 36.13
+    },
+    {
+      "date": "2026-08-27",
+      "congestion_rate_pct": 17.01,
+      "avg_speed": 35.59
+    },
+    {
+      "date": "2026-08-28",
+      "congestion_rate_pct": 17.42,
+      "avg_speed": 35.63
+    },
+    {
+      "date": "2026-08-29",
+      "congestion_rate_pct": 0.49,
+      "avg_speed": 40.8
+    },
+    {
+      "date": "2026-08-30",
+      "congestion_rate_pct": 0.61,
+      "avg_speed": 40.37
+    },
+    {
+      "date": "2026-08-31",
+      "congestion_rate_pct": 21.24,
+      "avg_speed": 34.29
+    },
+    {
+      "date": "2026-09-01",
+      "congestion_rate_pct": 23.55,
+      "avg_speed": 33.81
+    },
+    {
+      "date": "2026-09-02",
+      "congestion_rate_pct": 15.89,
+      "avg_speed": 35.86
+    },
+    {
+      "date": "2026-09-03",
+      "congestion_rate_pct": 15.65,
+      "avg_speed": 36.13
+    },
+    {
+      "date": "2026-09-04",
+      "congestion_rate_pct": 17.8,
+      "avg_speed": 35.61
+    },
+    {
+      "date": "2026-09-05",
+      "congestion_rate_pct": 0.43,
+      "avg_speed": 40.64
+    },
+    {
+      "date": "2026-09-06",
+      "congestion_rate_pct": 0.84,
+      "avg_speed": 40.89
+    },
+    {
+      "date": "2026-09-07",
+      "congestion_rate_pct": 18.49,
+      "avg_speed": 35.49
+    },
+    {
+      "date": "2026-09-08",
+      "congestion_rate_pct": 18.23,
+      "avg_speed": 35.48
+    },
+    {
+      "date": "2026-09-09",
+      "congestion_rate_pct": 16.17,
+      "avg_speed": 35.86
+    },
+    {
+      "date": "2026-09-10",
+      "congestion_rate_pct": 16.55,
+      "avg_speed": 35.94
+    },
+    {
+      "date": "2026-09-11",
+      "congestion_rate_pct": 21.82,
+      "avg_speed": 34.09
+    },
+    {
+      "date": "2026-09-12",
+      "congestion_rate_pct": 2.86,
+      "avg_speed": 38.89
+    },
+    {
+      "date": "2026-09-13",
+      "congestion_rate_pct": 0.61,
+      "avg_speed": 40.7
+    },
+    {
+      "date": "2026-09-14",
+      "congestion_rate_pct": 4.34,
+      "avg_speed": 38.14
+    },
+    {
+      "date": "2026-09-15",
+      "congestion_rate_pct": 22.86,
+      "avg_speed": 33.97
+    },
+    {
+      "date": "2026-09-16",
+      "congestion_rate_pct": 16.75,
+      "avg_speed": 35.91
+    },
+    {
+      "date": "2026-09-17",
+      "congestion_rate_pct": 16.41,
+      "avg_speed": 35.77
+    },
+    {
+      "date": "2026-09-18",
+      "congestion_rate_pct": 19.33,
+      "avg_speed": 35.61
+    },
+    {
+      "date": "2026-09-19",
+      "congestion_rate_pct": 0.67,
+      "avg_speed": 40.37
+    },
+    {
+      "date": "2026-09-20",
+      "congestion_rate_pct": 0.41,
+      "avg_speed": 40.9
+    },
+    {
+      "date": "2026-09-21",
+      "congestion_rate_pct": 16.38,
+      "avg_speed": 35.88
+    },
+    {
+      "date": "2026-09-22",
+      "congestion_rate_pct": 17.77,
+      "avg_speed": 35.39
+    },
+    {
+      "date": "2026-09-23",
+      "congestion_rate_pct": 17.85,
+      "avg_speed": 35.72
+    },
+    {
+      "date": "2026-09-24",
+      "congestion_rate_pct": 22.95,
+      "avg_speed": 33.9
+    },
+    {
+      "date": "2026-09-25",
+      "congestion_rate_pct": 22.45,
+      "avg_speed": 33.99
+    },
+    {
+      "date": "2026-09-26",
+      "congestion_rate_pct": 0.14,
+      "avg_speed": 40.68
+    },
+    {
+      "date": "2026-09-27",
+      "congestion_rate_pct": 0.55,
+      "avg_speed": 40.97
+    },
+    {
+      "date": "2026-09-28",
+      "congestion_rate_pct": 16.49,
+      "avg_speed": 35.64
+    },
+    {
+      "date": "2026-09-29",
+      "congestion_rate_pct": 14.96,
+      "avg_speed": 36.09
+    }
+  ],
+  "dow_hour_heatmap": [
+    {
+      "dow": 1,
+      "hour": 0,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 1,
+      "hour": 1,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 1,
+      "hour": 2,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 1,
+      "hour": 3,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 1,
+      "hour": 4,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 1,
+      "hour": 5,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 1,
+      "hour": 6,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 1,
+      "hour": 7,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 1,
+      "hour": 8,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 1,
+      "hour": 9,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 1,
+      "hour": 10,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 1,
+      "hour": 11,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 1,
+      "hour": 12,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 1,
+      "hour": 13,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 1,
+      "hour": 14,
+      "congestion_rate_pct": 0.69
+    },
+    {
+      "dow": 1,
+      "hour": 15,
+      "congestion_rate_pct": 2.7
+    },
+    {
+      "dow": 1,
+      "hour": 16,
+      "congestion_rate_pct": 6.87
+    },
+    {
+      "dow": 1,
+      "hour": 17,
+      "congestion_rate_pct": 7.02
+    },
+    {
+      "dow": 1,
+      "hour": 18,
+      "congestion_rate_pct": 5.48
+    },
+    {
+      "dow": 1,
+      "hour": 19,
+      "congestion_rate_pct": 0.85
+    },
+    {
+      "dow": 1,
+      "hour": 20,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 1,
+      "hour": 21,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 1,
+      "hour": 22,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 1,
+      "hour": 23,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 2,
+      "hour": 0,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 2,
+      "hour": 1,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 2,
+      "hour": 2,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 2,
+      "hour": 3,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 2,
+      "hour": 4,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 2,
+      "hour": 5,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 2,
+      "hour": 6,
+      "congestion_rate_pct": 0.15
+    },
+    {
+      "dow": 2,
+      "hour": 7,
+      "congestion_rate_pct": 7.64
+    },
+    {
+      "dow": 2,
+      "hour": 8,
+      "congestion_rate_pct": 57.41
+    },
+    {
+      "dow": 2,
+      "hour": 9,
+      "congestion_rate_pct": 64.12
+    },
+    {
+      "dow": 2,
+      "hour": 10,
+      "congestion_rate_pct": 26.39
+    },
+    {
+      "dow": 2,
+      "hour": 11,
+      "congestion_rate_pct": 1.7
+    },
+    {
+      "dow": 2,
+      "hour": 12,
+      "congestion_rate_pct": 0.23
+    },
+    {
+      "dow": 2,
+      "hour": 13,
+      "congestion_rate_pct": 0.15
+    },
+    {
+      "dow": 2,
+      "hour": 14,
+      "congestion_rate_pct": 4.55
+    },
+    {
+      "dow": 2,
+      "hour": 15,
+      "congestion_rate_pct": 9.95
+    },
+    {
+      "dow": 2,
+      "hour": 16,
+      "congestion_rate_pct": 40.12
+    },
+    {
+      "dow": 2,
+      "hour": 17,
+      "congestion_rate_pct": 72.07
+    },
+    {
+      "dow": 2,
+      "hour": 18,
+      "congestion_rate_pct": 77.62
+    },
+    {
+      "dow": 2,
+      "hour": 19,
+      "congestion_rate_pct": 45.29
+    },
+    {
+      "dow": 2,
+      "hour": 20,
+      "congestion_rate_pct": 3.32
+    },
+    {
+      "dow": 2,
+      "hour": 21,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 2,
+      "hour": 22,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 2,
+      "hour": 23,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 3,
+      "hour": 0,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 3,
+      "hour": 1,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 3,
+      "hour": 2,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 3,
+      "hour": 3,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 3,
+      "hour": 4,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 3,
+      "hour": 5,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 3,
+      "hour": 6,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 3,
+      "hour": 7,
+      "congestion_rate_pct": 8.18
+    },
+    {
+      "dow": 3,
+      "hour": 8,
+      "congestion_rate_pct": 63.19
+    },
+    {
+      "dow": 3,
+      "hour": 9,
+      "congestion_rate_pct": 72.76
+    },
+    {
+      "dow": 3,
+      "hour": 10,
+      "congestion_rate_pct": 29.24
+    },
+    {
+      "dow": 3,
+      "hour": 11,
+      "congestion_rate_pct": 3.94
+    },
+    {
+      "dow": 3,
+      "hour": 12,
+      "congestion_rate_pct": 1.7
+    },
+    {
+      "dow": 3,
+      "hour": 13,
+      "congestion_rate_pct": 0.31
+    },
+    {
+      "dow": 3,
+      "hour": 14,
+      "congestion_rate_pct": 6.17
+    },
+    {
+      "dow": 3,
+      "hour": 15,
+      "congestion_rate_pct": 15.05
+    },
+    {
+      "dow": 3,
+      "hour": 16,
+      "congestion_rate_pct": 48.38
+    },
+    {
+      "dow": 3,
+      "hour": 17,
+      "congestion_rate_pct": 81.17
+    },
+    {
+      "dow": 3,
+      "hour": 18,
+      "congestion_rate_pct": 87.5
+    },
+    {
+      "dow": 3,
+      "hour": 19,
+      "congestion_rate_pct": 48.53
+    },
+    {
+      "dow": 3,
+      "hour": 20,
+      "congestion_rate_pct": 3.7
+    },
+    {
+      "dow": 3,
+      "hour": 21,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 3,
+      "hour": 22,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 3,
+      "hour": 23,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 4,
+      "hour": 0,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 4,
+      "hour": 1,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 4,
+      "hour": 2,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 4,
+      "hour": 3,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 4,
+      "hour": 4,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 4,
+      "hour": 5,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 4,
+      "hour": 6,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 4,
+      "hour": 7,
+      "congestion_rate_pct": 7.55
+    },
+    {
+      "dow": 4,
+      "hour": 8,
+      "congestion_rate_pct": 60.16
+    },
+    {
+      "dow": 4,
+      "hour": 9,
+      "congestion_rate_pct": 74.22
+    },
+    {
+      "dow": 4,
+      "hour": 10,
+      "congestion_rate_pct": 32.12
+    },
+    {
+      "dow": 4,
+      "hour": 11,
+      "congestion_rate_pct": 2.78
+    },
+    {
+      "dow": 4,
+      "hour": 12,
+      "congestion_rate_pct": 0.43
+    },
+    {
+      "dow": 4,
+      "hour": 13,
+      "congestion_rate_pct": 1.65
+    },
+    {
+      "dow": 4,
+      "hour": 14,
+      "congestion_rate_pct": 1.48
+    },
+    {
+      "dow": 4,
+      "hour": 15,
+      "congestion_rate_pct": 5.99
+    },
+    {
+      "dow": 4,
+      "hour": 16,
+      "congestion_rate_pct": 35.16
+    },
+    {
+      "dow": 4,
+      "hour": 17,
+      "congestion_rate_pct": 73.44
+    },
+    {
+      "dow": 4,
+      "hour": 18,
+      "congestion_rate_pct": 77.86
+    },
+    {
+      "dow": 4,
+      "hour": 19,
+      "congestion_rate_pct": 42.27
+    },
+    {
+      "dow": 4,
+      "hour": 20,
+      "congestion_rate_pct": 2.26
+    },
+    {
+      "dow": 4,
+      "hour": 21,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 4,
+      "hour": 22,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 4,
+      "hour": 23,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 5,
+      "hour": 0,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 5,
+      "hour": 1,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 5,
+      "hour": 2,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 5,
+      "hour": 3,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 5,
+      "hour": 4,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 5,
+      "hour": 5,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 5,
+      "hour": 6,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 5,
+      "hour": 7,
+      "congestion_rate_pct": 6.6
+    },
+    {
+      "dow": 5,
+      "hour": 8,
+      "congestion_rate_pct": 61.98
+    },
+    {
+      "dow": 5,
+      "hour": 9,
+      "congestion_rate_pct": 68.92
+    },
+    {
+      "dow": 5,
+      "hour": 10,
+      "congestion_rate_pct": 28.21
+    },
+    {
+      "dow": 5,
+      "hour": 11,
+      "congestion_rate_pct": 1.74
+    },
+    {
+      "dow": 5,
+      "hour": 12,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 5,
+      "hour": 13,
+      "congestion_rate_pct": 0.87
+    },
+    {
+      "dow": 5,
+      "hour": 14,
+      "congestion_rate_pct": 2.43
+    },
+    {
+      "dow": 5,
+      "hour": 15,
+      "congestion_rate_pct": 8.33
+    },
+    {
+      "dow": 5,
+      "hour": 16,
+      "congestion_rate_pct": 46.79
+    },
+    {
+      "dow": 5,
+      "hour": 17,
+      "congestion_rate_pct": 82.9
+    },
+    {
+      "dow": 5,
+      "hour": 18,
+      "congestion_rate_pct": 87.59
+    },
+    {
+      "dow": 5,
+      "hour": 19,
+      "congestion_rate_pct": 45.66
+    },
+    {
+      "dow": 5,
+      "hour": 20,
+      "congestion_rate_pct": 3.3
+    },
+    {
+      "dow": 5,
+      "hour": 21,
+      "congestion_rate_pct": 0.09
+    },
+    {
+      "dow": 5,
+      "hour": 22,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 5,
+      "hour": 23,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 6,
+      "hour": 0,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 6,
+      "hour": 1,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 6,
+      "hour": 2,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 6,
+      "hour": 3,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 6,
+      "hour": 4,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 6,
+      "hour": 5,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 6,
+      "hour": 6,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 6,
+      "hour": 7,
+      "congestion_rate_pct": 9.55
+    },
+    {
+      "dow": 6,
+      "hour": 8,
+      "congestion_rate_pct": 64.67
+    },
+    {
+      "dow": 6,
+      "hour": 9,
+      "congestion_rate_pct": 72.31
+    },
+    {
+      "dow": 6,
+      "hour": 10,
+      "congestion_rate_pct": 27.17
+    },
+    {
+      "dow": 6,
+      "hour": 11,
+      "congestion_rate_pct": 1.65
+    },
+    {
+      "dow": 6,
+      "hour": 12,
+      "congestion_rate_pct": 1.22
+    },
+    {
+      "dow": 6,
+      "hour": 13,
+      "congestion_rate_pct": 1.3
+    },
+    {
+      "dow": 6,
+      "hour": 14,
+      "congestion_rate_pct": 6.16
+    },
+    {
+      "dow": 6,
+      "hour": 15,
+      "congestion_rate_pct": 17.53
+    },
+    {
+      "dow": 6,
+      "hour": 16,
+      "congestion_rate_pct": 54.69
+    },
+    {
+      "dow": 6,
+      "hour": 17,
+      "congestion_rate_pct": 85.94
+    },
+    {
+      "dow": 6,
+      "hour": 18,
+      "congestion_rate_pct": 86.02
+    },
+    {
+      "dow": 6,
+      "hour": 19,
+      "congestion_rate_pct": 54.6
+    },
+    {
+      "dow": 6,
+      "hour": 20,
+      "congestion_rate_pct": 7.12
+    },
+    {
+      "dow": 6,
+      "hour": 21,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 6,
+      "hour": 22,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 6,
+      "hour": 23,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 7,
+      "hour": 0,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 7,
+      "hour": 1,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 7,
+      "hour": 2,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 7,
+      "hour": 3,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 7,
+      "hour": 4,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 7,
+      "hour": 5,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 7,
+      "hour": 6,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 7,
+      "hour": 7,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 7,
+      "hour": 8,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 7,
+      "hour": 9,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 7,
+      "hour": 10,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 7,
+      "hour": 11,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 7,
+      "hour": 12,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 7,
+      "hour": 13,
+      "congestion_rate_pct": 0.08
+    },
+    {
+      "dow": 7,
+      "hour": 14,
+      "congestion_rate_pct": 1.62
+    },
+    {
+      "dow": 7,
+      "hour": 15,
+      "congestion_rate_pct": 5.71
+    },
+    {
+      "dow": 7,
+      "hour": 16,
+      "congestion_rate_pct": 7.41
+    },
+    {
+      "dow": 7,
+      "hour": 17,
+      "congestion_rate_pct": 5.71
+    },
+    {
+      "dow": 7,
+      "hour": 18,
+      "congestion_rate_pct": 4.17
+    },
+    {
+      "dow": 7,
+      "hour": 19,
+      "congestion_rate_pct": 0.46
+    },
+    {
+      "dow": 7,
+      "hour": 20,
+      "congestion_rate_pct": 0.08
+    },
+    {
+      "dow": 7,
+      "hour": 21,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 7,
+      "hour": 22,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "dow": 7,
+      "hour": 23,
+      "congestion_rate_pct": 0.0
+    }
+  ],
+  "junction_hour_heatmap": [
+    {
+      "junction_name": "Airport Road",
+      "hour": 0,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Airport Road",
+      "hour": 1,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Airport Road",
+      "hour": 2,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Airport Road",
+      "hour": 3,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Airport Road",
+      "hour": 4,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Airport Road",
+      "hour": 5,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Airport Road",
+      "hour": 6,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Airport Road",
+      "hour": 7,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Airport Road",
+      "hour": 8,
+      "congestion_rate_pct": 5.83
+    },
+    {
+      "junction_name": "Airport Road",
+      "hour": 9,
+      "congestion_rate_pct": 8.19
+    },
+    {
+      "junction_name": "Airport Road",
+      "hour": 10,
+      "congestion_rate_pct": 2.22
+    },
+    {
+      "junction_name": "Airport Road",
+      "hour": 11,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Airport Road",
+      "hour": 12,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Airport Road",
+      "hour": 13,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Airport Road",
+      "hour": 14,
+      "congestion_rate_pct": 0.14
+    },
+    {
+      "junction_name": "Airport Road",
+      "hour": 15,
+      "congestion_rate_pct": 0.14
+    },
+    {
+      "junction_name": "Airport Road",
+      "hour": 16,
+      "congestion_rate_pct": 2.5
+    },
+    {
+      "junction_name": "Airport Road",
+      "hour": 17,
+      "congestion_rate_pct": 18.19
+    },
+    {
+      "junction_name": "Airport Road",
+      "hour": 18,
+      "congestion_rate_pct": 24.17
+    },
+    {
+      "junction_name": "Airport Road",
+      "hour": 19,
+      "congestion_rate_pct": 4.72
+    },
+    {
+      "junction_name": "Airport Road",
+      "hour": 20,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Airport Road",
+      "hour": 21,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Airport Road",
+      "hour": 22,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Airport Road",
+      "hour": 23,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Ariyamangalam",
+      "hour": 0,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Ariyamangalam",
+      "hour": 1,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Ariyamangalam",
+      "hour": 2,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Ariyamangalam",
+      "hour": 3,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Ariyamangalam",
+      "hour": 4,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Ariyamangalam",
+      "hour": 5,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Ariyamangalam",
+      "hour": 6,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Ariyamangalam",
+      "hour": 7,
+      "congestion_rate_pct": 3.47
+    },
+    {
+      "junction_name": "Ariyamangalam",
+      "hour": 8,
+      "congestion_rate_pct": 48.33
+    },
+    {
+      "junction_name": "Ariyamangalam",
+      "hour": 9,
+      "congestion_rate_pct": 57.78
+    },
+    {
+      "junction_name": "Ariyamangalam",
+      "hour": 10,
+      "congestion_rate_pct": 18.19
+    },
+    {
+      "junction_name": "Ariyamangalam",
+      "hour": 11,
+      "congestion_rate_pct": 0.14
+    },
+    {
+      "junction_name": "Ariyamangalam",
+      "hour": 12,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Ariyamangalam",
+      "hour": 13,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Ariyamangalam",
+      "hour": 14,
+      "congestion_rate_pct": 0.97
+    },
+    {
+      "junction_name": "Ariyamangalam",
+      "hour": 15,
+      "congestion_rate_pct": 4.17
+    },
+    {
+      "junction_name": "Ariyamangalam",
+      "hour": 16,
+      "congestion_rate_pct": 33.19
+    },
+    {
+      "junction_name": "Ariyamangalam",
+      "hour": 17,
+      "congestion_rate_pct": 59.31
+    },
+    {
+      "junction_name": "Ariyamangalam",
+      "hour": 18,
+      "congestion_rate_pct": 62.64
+    },
+    {
+      "junction_name": "Ariyamangalam",
+      "hour": 19,
+      "congestion_rate_pct": 27.36
+    },
+    {
+      "junction_name": "Ariyamangalam",
+      "hour": 20,
+      "congestion_rate_pct": 1.53
+    },
+    {
+      "junction_name": "Ariyamangalam",
+      "hour": 21,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Ariyamangalam",
+      "hour": 22,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Ariyamangalam",
+      "hour": 23,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Cantonment",
+      "hour": 0,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Cantonment",
+      "hour": 1,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Cantonment",
+      "hour": 2,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Cantonment",
+      "hour": 3,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Cantonment",
+      "hour": 4,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Cantonment",
+      "hour": 5,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Cantonment",
+      "hour": 6,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Cantonment",
+      "hour": 7,
+      "congestion_rate_pct": 4.72
+    },
+    {
+      "junction_name": "Cantonment",
+      "hour": 8,
+      "congestion_rate_pct": 56.53
+    },
+    {
+      "junction_name": "Cantonment",
+      "hour": 9,
+      "congestion_rate_pct": 64.17
+    },
+    {
+      "junction_name": "Cantonment",
+      "hour": 10,
+      "congestion_rate_pct": 26.81
+    },
+    {
+      "junction_name": "Cantonment",
+      "hour": 11,
+      "congestion_rate_pct": 2.22
+    },
+    {
+      "junction_name": "Cantonment",
+      "hour": 12,
+      "congestion_rate_pct": 0.14
+    },
+    {
+      "junction_name": "Cantonment",
+      "hour": 13,
+      "congestion_rate_pct": 0.28
+    },
+    {
+      "junction_name": "Cantonment",
+      "hour": 14,
+      "congestion_rate_pct": 1.39
+    },
+    {
+      "junction_name": "Cantonment",
+      "hour": 15,
+      "congestion_rate_pct": 9.86
+    },
+    {
+      "junction_name": "Cantonment",
+      "hour": 16,
+      "congestion_rate_pct": 39.58
+    },
+    {
+      "junction_name": "Cantonment",
+      "hour": 17,
+      "congestion_rate_pct": 70.14
+    },
+    {
+      "junction_name": "Cantonment",
+      "hour": 18,
+      "congestion_rate_pct": 70.28
+    },
+    {
+      "junction_name": "Cantonment",
+      "hour": 19,
+      "congestion_rate_pct": 45.83
+    },
+    {
+      "junction_name": "Cantonment",
+      "hour": 20,
+      "congestion_rate_pct": 6.11
+    },
+    {
+      "junction_name": "Cantonment",
+      "hour": 21,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Cantonment",
+      "hour": 22,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Cantonment",
+      "hour": 23,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Central Bus Stand",
+      "hour": 0,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Central Bus Stand",
+      "hour": 1,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Central Bus Stand",
+      "hour": 2,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Central Bus Stand",
+      "hour": 3,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Central Bus Stand",
+      "hour": 4,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Central Bus Stand",
+      "hour": 5,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Central Bus Stand",
+      "hour": 6,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Central Bus Stand",
+      "hour": 7,
+      "congestion_rate_pct": 15.56
+    },
+    {
+      "junction_name": "Central Bus Stand",
+      "hour": 8,
+      "congestion_rate_pct": 65.42
+    },
+    {
+      "junction_name": "Central Bus Stand",
+      "hour": 9,
+      "congestion_rate_pct": 68.33
+    },
+    {
+      "junction_name": "Central Bus Stand",
+      "hour": 10,
+      "congestion_rate_pct": 45.69
+    },
+    {
+      "junction_name": "Central Bus Stand",
+      "hour": 11,
+      "congestion_rate_pct": 5.42
+    },
+    {
+      "junction_name": "Central Bus Stand",
+      "hour": 12,
+      "congestion_rate_pct": 1.11
+    },
+    {
+      "junction_name": "Central Bus Stand",
+      "hour": 13,
+      "congestion_rate_pct": 1.81
+    },
+    {
+      "junction_name": "Central Bus Stand",
+      "hour": 14,
+      "congestion_rate_pct": 10.42
+    },
+    {
+      "junction_name": "Central Bus Stand",
+      "hour": 15,
+      "congestion_rate_pct": 29.58
+    },
+    {
+      "junction_name": "Central Bus Stand",
+      "hour": 16,
+      "congestion_rate_pct": 67.5
+    },
+    {
+      "junction_name": "Central Bus Stand",
+      "hour": 17,
+      "congestion_rate_pct": 75.42
+    },
+    {
+      "junction_name": "Central Bus Stand",
+      "hour": 18,
+      "congestion_rate_pct": 71.94
+    },
+    {
+      "junction_name": "Central Bus Stand",
+      "hour": 19,
+      "congestion_rate_pct": 58.06
+    },
+    {
+      "junction_name": "Central Bus Stand",
+      "hour": 20,
+      "congestion_rate_pct": 8.33
+    },
+    {
+      "junction_name": "Central Bus Stand",
+      "hour": 21,
+      "congestion_rate_pct": 0.14
+    },
+    {
+      "junction_name": "Central Bus Stand",
+      "hour": 22,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Central Bus Stand",
+      "hour": 23,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Chathiram Bus Stand",
+      "hour": 0,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Chathiram Bus Stand",
+      "hour": 1,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Chathiram Bus Stand",
+      "hour": 2,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Chathiram Bus Stand",
+      "hour": 3,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Chathiram Bus Stand",
+      "hour": 4,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Chathiram Bus Stand",
+      "hour": 5,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Chathiram Bus Stand",
+      "hour": 6,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Chathiram Bus Stand",
+      "hour": 7,
+      "congestion_rate_pct": 11.39
+    },
+    {
+      "junction_name": "Chathiram Bus Stand",
+      "hour": 8,
+      "congestion_rate_pct": 62.08
+    },
+    {
+      "junction_name": "Chathiram Bus Stand",
+      "hour": 9,
+      "congestion_rate_pct": 68.33
+    },
+    {
+      "junction_name": "Chathiram Bus Stand",
+      "hour": 10,
+      "congestion_rate_pct": 38.19
+    },
+    {
+      "junction_name": "Chathiram Bus Stand",
+      "hour": 11,
+      "congestion_rate_pct": 3.06
+    },
+    {
+      "junction_name": "Chathiram Bus Stand",
+      "hour": 12,
+      "congestion_rate_pct": 1.39
+    },
+    {
+      "junction_name": "Chathiram Bus Stand",
+      "hour": 13,
+      "congestion_rate_pct": 2.08
+    },
+    {
+      "junction_name": "Chathiram Bus Stand",
+      "hour": 14,
+      "congestion_rate_pct": 9.58
+    },
+    {
+      "junction_name": "Chathiram Bus Stand",
+      "hour": 15,
+      "congestion_rate_pct": 18.89
+    },
+    {
+      "junction_name": "Chathiram Bus Stand",
+      "hour": 16,
+      "congestion_rate_pct": 51.81
+    },
+    {
+      "junction_name": "Chathiram Bus Stand",
+      "hour": 17,
+      "congestion_rate_pct": 74.17
+    },
+    {
+      "junction_name": "Chathiram Bus Stand",
+      "hour": 18,
+      "congestion_rate_pct": 72.5
+    },
+    {
+      "junction_name": "Chathiram Bus Stand",
+      "hour": 19,
+      "congestion_rate_pct": 49.72
+    },
+    {
+      "junction_name": "Chathiram Bus Stand",
+      "hour": 20,
+      "congestion_rate_pct": 5.28
+    },
+    {
+      "junction_name": "Chathiram Bus Stand",
+      "hour": 21,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Chathiram Bus Stand",
+      "hour": 22,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Chathiram Bus Stand",
+      "hour": 23,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Palakkarai",
+      "hour": 0,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Palakkarai",
+      "hour": 1,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Palakkarai",
+      "hour": 2,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Palakkarai",
+      "hour": 3,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Palakkarai",
+      "hour": 4,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Palakkarai",
+      "hour": 5,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Palakkarai",
+      "hour": 6,
+      "congestion_rate_pct": 0.28
+    },
+    {
+      "junction_name": "Palakkarai",
+      "hour": 7,
+      "congestion_rate_pct": 9.86
+    },
+    {
+      "junction_name": "Palakkarai",
+      "hour": 8,
+      "congestion_rate_pct": 62.5
+    },
+    {
+      "junction_name": "Palakkarai",
+      "hour": 9,
+      "congestion_rate_pct": 66.94
+    },
+    {
+      "junction_name": "Palakkarai",
+      "hour": 10,
+      "congestion_rate_pct": 31.39
+    },
+    {
+      "junction_name": "Palakkarai",
+      "hour": 11,
+      "congestion_rate_pct": 3.89
+    },
+    {
+      "junction_name": "Palakkarai",
+      "hour": 12,
+      "congestion_rate_pct": 1.81
+    },
+    {
+      "junction_name": "Palakkarai",
+      "hour": 13,
+      "congestion_rate_pct": 0.97
+    },
+    {
+      "junction_name": "Palakkarai",
+      "hour": 14,
+      "congestion_rate_pct": 5.97
+    },
+    {
+      "junction_name": "Palakkarai",
+      "hour": 15,
+      "congestion_rate_pct": 19.72
+    },
+    {
+      "junction_name": "Palakkarai",
+      "hour": 16,
+      "congestion_rate_pct": 48.19
+    },
+    {
+      "junction_name": "Palakkarai",
+      "hour": 17,
+      "congestion_rate_pct": 70.0
+    },
+    {
+      "junction_name": "Palakkarai",
+      "hour": 18,
+      "congestion_rate_pct": 70.28
+    },
+    {
+      "junction_name": "Palakkarai",
+      "hour": 19,
+      "congestion_rate_pct": 50.97
+    },
+    {
+      "junction_name": "Palakkarai",
+      "hour": 20,
+      "congestion_rate_pct": 4.31
+    },
+    {
+      "junction_name": "Palakkarai",
+      "hour": 21,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Palakkarai",
+      "hour": 22,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Palakkarai",
+      "hour": 23,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Ponmalai",
+      "hour": 0,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Ponmalai",
+      "hour": 1,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Ponmalai",
+      "hour": 2,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Ponmalai",
+      "hour": 3,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Ponmalai",
+      "hour": 4,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Ponmalai",
+      "hour": 5,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Ponmalai",
+      "hour": 6,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Ponmalai",
+      "hour": 7,
+      "congestion_rate_pct": 1.25
+    },
+    {
+      "junction_name": "Ponmalai",
+      "hour": 8,
+      "congestion_rate_pct": 34.44
+    },
+    {
+      "junction_name": "Ponmalai",
+      "hour": 9,
+      "congestion_rate_pct": 42.36
+    },
+    {
+      "junction_name": "Ponmalai",
+      "hour": 10,
+      "congestion_rate_pct": 7.92
+    },
+    {
+      "junction_name": "Ponmalai",
+      "hour": 11,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Ponmalai",
+      "hour": 12,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Ponmalai",
+      "hour": 13,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Ponmalai",
+      "hour": 14,
+      "congestion_rate_pct": 3.19
+    },
+    {
+      "junction_name": "Ponmalai",
+      "hour": 15,
+      "congestion_rate_pct": 5.14
+    },
+    {
+      "junction_name": "Ponmalai",
+      "hour": 16,
+      "congestion_rate_pct": 26.11
+    },
+    {
+      "junction_name": "Ponmalai",
+      "hour": 17,
+      "congestion_rate_pct": 57.92
+    },
+    {
+      "junction_name": "Ponmalai",
+      "hour": 18,
+      "congestion_rate_pct": 61.67
+    },
+    {
+      "junction_name": "Ponmalai",
+      "hour": 19,
+      "congestion_rate_pct": 25.0
+    },
+    {
+      "junction_name": "Ponmalai",
+      "hour": 20,
+      "congestion_rate_pct": 0.28
+    },
+    {
+      "junction_name": "Ponmalai",
+      "hour": 21,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Ponmalai",
+      "hour": 22,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Ponmalai",
+      "hour": 23,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Samayapuram Toll",
+      "hour": 0,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Samayapuram Toll",
+      "hour": 1,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Samayapuram Toll",
+      "hour": 2,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Samayapuram Toll",
+      "hour": 3,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Samayapuram Toll",
+      "hour": 4,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Samayapuram Toll",
+      "hour": 5,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Samayapuram Toll",
+      "hour": 6,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Samayapuram Toll",
+      "hour": 7,
+      "congestion_rate_pct": 0.69
+    },
+    {
+      "junction_name": "Samayapuram Toll",
+      "hour": 8,
+      "congestion_rate_pct": 23.06
+    },
+    {
+      "junction_name": "Samayapuram Toll",
+      "hour": 9,
+      "congestion_rate_pct": 30.97
+    },
+    {
+      "junction_name": "Samayapuram Toll",
+      "hour": 10,
+      "congestion_rate_pct": 5.28
+    },
+    {
+      "junction_name": "Samayapuram Toll",
+      "hour": 11,
+      "congestion_rate_pct": 0.42
+    },
+    {
+      "junction_name": "Samayapuram Toll",
+      "hour": 12,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Samayapuram Toll",
+      "hour": 13,
+      "congestion_rate_pct": 0.14
+    },
+    {
+      "junction_name": "Samayapuram Toll",
+      "hour": 14,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Samayapuram Toll",
+      "hour": 15,
+      "congestion_rate_pct": 1.53
+    },
+    {
+      "junction_name": "Samayapuram Toll",
+      "hour": 16,
+      "congestion_rate_pct": 11.94
+    },
+    {
+      "junction_name": "Samayapuram Toll",
+      "hour": 17,
+      "congestion_rate_pct": 44.03
+    },
+    {
+      "junction_name": "Samayapuram Toll",
+      "hour": 18,
+      "congestion_rate_pct": 47.92
+    },
+    {
+      "junction_name": "Samayapuram Toll",
+      "hour": 19,
+      "congestion_rate_pct": 15.14
+    },
+    {
+      "junction_name": "Samayapuram Toll",
+      "hour": 20,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Samayapuram Toll",
+      "hour": 21,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Samayapuram Toll",
+      "hour": 22,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Samayapuram Toll",
+      "hour": 23,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Srirangam Gate",
+      "hour": 0,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Srirangam Gate",
+      "hour": 1,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Srirangam Gate",
+      "hour": 2,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Srirangam Gate",
+      "hour": 3,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Srirangam Gate",
+      "hour": 4,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Srirangam Gate",
+      "hour": 5,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Srirangam Gate",
+      "hour": 6,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Srirangam Gate",
+      "hour": 7,
+      "congestion_rate_pct": 5.28
+    },
+    {
+      "junction_name": "Srirangam Gate",
+      "hour": 8,
+      "congestion_rate_pct": 56.39
+    },
+    {
+      "junction_name": "Srirangam Gate",
+      "hour": 9,
+      "congestion_rate_pct": 62.64
+    },
+    {
+      "junction_name": "Srirangam Gate",
+      "hour": 10,
+      "congestion_rate_pct": 25.28
+    },
+    {
+      "junction_name": "Srirangam Gate",
+      "hour": 11,
+      "congestion_rate_pct": 1.67
+    },
+    {
+      "junction_name": "Srirangam Gate",
+      "hour": 12,
+      "congestion_rate_pct": 0.56
+    },
+    {
+      "junction_name": "Srirangam Gate",
+      "hour": 13,
+      "congestion_rate_pct": 1.11
+    },
+    {
+      "junction_name": "Srirangam Gate",
+      "hour": 14,
+      "congestion_rate_pct": 2.36
+    },
+    {
+      "junction_name": "Srirangam Gate",
+      "hour": 15,
+      "congestion_rate_pct": 7.5
+    },
+    {
+      "junction_name": "Srirangam Gate",
+      "hour": 16,
+      "congestion_rate_pct": 39.31
+    },
+    {
+      "junction_name": "Srirangam Gate",
+      "hour": 17,
+      "congestion_rate_pct": 69.17
+    },
+    {
+      "junction_name": "Srirangam Gate",
+      "hour": 18,
+      "congestion_rate_pct": 70.0
+    },
+    {
+      "junction_name": "Srirangam Gate",
+      "hour": 19,
+      "congestion_rate_pct": 44.72
+    },
+    {
+      "junction_name": "Srirangam Gate",
+      "hour": 20,
+      "congestion_rate_pct": 3.06
+    },
+    {
+      "junction_name": "Srirangam Gate",
+      "hour": 21,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Srirangam Gate",
+      "hour": 22,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Srirangam Gate",
+      "hour": 23,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Tennur",
+      "hour": 0,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Tennur",
+      "hour": 1,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Tennur",
+      "hour": 2,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Tennur",
+      "hour": 3,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Tennur",
+      "hour": 4,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Tennur",
+      "hour": 5,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Tennur",
+      "hour": 6,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Tennur",
+      "hour": 7,
+      "congestion_rate_pct": 0.42
+    },
+    {
+      "junction_name": "Tennur",
+      "hour": 8,
+      "congestion_rate_pct": 10.69
+    },
+    {
+      "junction_name": "Tennur",
+      "hour": 9,
+      "congestion_rate_pct": 17.78
+    },
+    {
+      "junction_name": "Tennur",
+      "hour": 10,
+      "congestion_rate_pct": 3.06
+    },
+    {
+      "junction_name": "Tennur",
+      "hour": 11,
+      "congestion_rate_pct": 0.14
+    },
+    {
+      "junction_name": "Tennur",
+      "hour": 12,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Tennur",
+      "hour": 13,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Tennur",
+      "hour": 14,
+      "congestion_rate_pct": 0.28
+    },
+    {
+      "junction_name": "Tennur",
+      "hour": 15,
+      "congestion_rate_pct": 0.14
+    },
+    {
+      "junction_name": "Tennur",
+      "hour": 16,
+      "congestion_rate_pct": 12.08
+    },
+    {
+      "junction_name": "Tennur",
+      "hour": 17,
+      "congestion_rate_pct": 33.47
+    },
+    {
+      "junction_name": "Tennur",
+      "hour": 18,
+      "congestion_rate_pct": 40.0
+    },
+    {
+      "junction_name": "Tennur",
+      "hour": 19,
+      "congestion_rate_pct": 10.42
+    },
+    {
+      "junction_name": "Tennur",
+      "hour": 20,
+      "congestion_rate_pct": 0.42
+    },
+    {
+      "junction_name": "Tennur",
+      "hour": 21,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Tennur",
+      "hour": 22,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Tennur",
+      "hour": 23,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Thillai Nagar",
+      "hour": 0,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Thillai Nagar",
+      "hour": 1,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Thillai Nagar",
+      "hour": 2,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Thillai Nagar",
+      "hour": 3,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Thillai Nagar",
+      "hour": 4,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Thillai Nagar",
+      "hour": 5,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Thillai Nagar",
+      "hour": 6,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Thillai Nagar",
+      "hour": 7,
+      "congestion_rate_pct": 12.22
+    },
+    {
+      "junction_name": "Thillai Nagar",
+      "hour": 8,
+      "congestion_rate_pct": 60.14
+    },
+    {
+      "junction_name": "Thillai Nagar",
+      "hour": 9,
+      "congestion_rate_pct": 65.14
+    },
+    {
+      "junction_name": "Thillai Nagar",
+      "hour": 10,
+      "congestion_rate_pct": 26.39
+    },
+    {
+      "junction_name": "Thillai Nagar",
+      "hour": 11,
+      "congestion_rate_pct": 2.36
+    },
+    {
+      "junction_name": "Thillai Nagar",
+      "hour": 12,
+      "congestion_rate_pct": 0.97
+    },
+    {
+      "junction_name": "Thillai Nagar",
+      "hour": 13,
+      "congestion_rate_pct": 0.69
+    },
+    {
+      "junction_name": "Thillai Nagar",
+      "hour": 14,
+      "congestion_rate_pct": 2.78
+    },
+    {
+      "junction_name": "Thillai Nagar",
+      "hour": 15,
+      "congestion_rate_pct": 10.56
+    },
+    {
+      "junction_name": "Thillai Nagar",
+      "hour": 16,
+      "congestion_rate_pct": 52.64
+    },
+    {
+      "junction_name": "Thillai Nagar",
+      "hour": 17,
+      "congestion_rate_pct": 70.56
+    },
+    {
+      "junction_name": "Thillai Nagar",
+      "hour": 18,
+      "congestion_rate_pct": 71.81
+    },
+    {
+      "junction_name": "Thillai Nagar",
+      "hour": 19,
+      "congestion_rate_pct": 45.69
+    },
+    {
+      "junction_name": "Thillai Nagar",
+      "hour": 20,
+      "congestion_rate_pct": 2.5
+    },
+    {
+      "junction_name": "Thillai Nagar",
+      "hour": 21,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Thillai Nagar",
+      "hour": 22,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Thillai Nagar",
+      "hour": 23,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Woraiyur",
+      "hour": 0,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Woraiyur",
+      "hour": 1,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Woraiyur",
+      "hour": 2,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Woraiyur",
+      "hour": 3,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Woraiyur",
+      "hour": 4,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Woraiyur",
+      "hour": 5,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Woraiyur",
+      "hour": 6,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Woraiyur",
+      "hour": 7,
+      "congestion_rate_pct": 1.53
+    },
+    {
+      "junction_name": "Woraiyur",
+      "hour": 8,
+      "congestion_rate_pct": 30.56
+    },
+    {
+      "junction_name": "Woraiyur",
+      "hour": 9,
+      "congestion_rate_pct": 38.47
+    },
+    {
+      "junction_name": "Woraiyur",
+      "hour": 10,
+      "congestion_rate_pct": 9.72
+    },
+    {
+      "junction_name": "Woraiyur",
+      "hour": 11,
+      "congestion_rate_pct": 0.69
+    },
+    {
+      "junction_name": "Woraiyur",
+      "hour": 12,
+      "congestion_rate_pct": 0.14
+    },
+    {
+      "junction_name": "Woraiyur",
+      "hour": 13,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Woraiyur",
+      "hour": 14,
+      "congestion_rate_pct": 2.5
+    },
+    {
+      "junction_name": "Woraiyur",
+      "hour": 15,
+      "congestion_rate_pct": 3.89
+    },
+    {
+      "junction_name": "Woraiyur",
+      "hour": 16,
+      "congestion_rate_pct": 18.75
+    },
+    {
+      "junction_name": "Woraiyur",
+      "hour": 17,
+      "congestion_rate_pct": 44.03
+    },
+    {
+      "junction_name": "Woraiyur",
+      "hour": 18,
+      "congestion_rate_pct": 53.75
+    },
+    {
+      "junction_name": "Woraiyur",
+      "hour": 19,
+      "congestion_rate_pct": 21.67
+    },
+    {
+      "junction_name": "Woraiyur",
+      "hour": 20,
+      "congestion_rate_pct": 1.25
+    },
+    {
+      "junction_name": "Woraiyur",
+      "hour": 21,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Woraiyur",
+      "hour": 22,
+      "congestion_rate_pct": 0.0
+    },
+    {
+      "junction_name": "Woraiyur",
+      "hour": 23,
+      "congestion_rate_pct": 0.0
+    }
+  ],
+  "zone_summary": [
+    {
+      "zone": "Central",
+      "avg_speed": 28.53,
+      "avg_queue_m": 25.0,
+      "congestion_rate_pct": 20.0
+    },
+    {
+      "zone": "Commercial",
+      "avg_speed": 34.1,
+      "avg_queue_m": 19.3,
+      "congestion_rate_pct": 17.14
+    },
+    {
+      "zone": "Temple",
+      "avg_speed": 28.46,
+      "avg_queue_m": 17.1,
+      "congestion_rate_pct": 16.21
+    },
+    {
+      "zone": "Industrial",
+      "avg_speed": 40.69,
+      "avg_queue_m": 11.3,
+      "congestion_rate_pct": 12.13
+    },
+    {
+      "zone": "Highway",
+      "avg_speed": 53.74,
+      "avg_queue_m": 6.3,
+      "congestion_rate_pct": 7.55
+    },
+    {
+      "zone": "Residential",
+      "avg_speed": 36.55,
+      "avg_queue_m": 6.0,
+      "congestion_rate_pct": 7.41
+    },
+    {
+      "zone": "Suburban",
+      "avg_speed": 50.71,
+      "avg_queue_m": 2.3,
+      "congestion_rate_pct": 2.75
+    }
+  ],
+  "peak_vs_offpeak": [
+    {
+      "is_peak": 1,
+      "avg_speed": 23.61,
+      "avg_vehicles": 167.9,
+      "congestion_rate_pct": 61.65
+    },
+    {
+      "is_peak": 0,
+      "avg_speed": 39.56,
+      "avg_vehicles": 54.1,
+      "congestion_rate_pct": 3.07
+    }
+  ],
+  "incident_impact": [
+    {
+      "incident_flag": 1,
+      "records": 1757,
+      "avg_speed": 30.67,
+      "congestion_rate_pct": 22.88
+    },
+    {
+      "incident_flag": 0,
+      "records": 205603,
+      "avg_speed": 36.82,
+      "congestion_rate_pct": 13.24
+    }
+  ],
+  "congestion_levels": [
+    {
+      "congestion_level": "Severe",
+      "count": 11718
+    },
+    {
+      "congestion_level": "Heavy",
+      "count": 15910
+    },
+    {
+      "congestion_level": "Moderate",
+      "count": 26106
+    },
+    {
+      "congestion_level": "Free-flow",
+      "count": 153626
+    }
+  ],
+  "stream_batches": [
+    {
+      "batch_id": 0,
+      "rows": 144,
+      "predicted_congested": 0,
+      "correct": 144,
+      "batch_accuracy": 1.0
+    },
+    {
+      "batch_id": 1,
+      "rows": 144,
+      "predicted_congested": 0,
+      "correct": 144,
+      "batch_accuracy": 1.0
+    },
+    {
+      "batch_id": 2,
+      "rows": 144,
+      "predicted_congested": 0,
+      "correct": 144,
+      "batch_accuracy": 1.0
+    },
+    {
+      "batch_id": 3,
+      "rows": 144,
+      "predicted_congested": 0,
+      "correct": 144,
+      "batch_accuracy": 1.0
+    },
+    {
+      "batch_id": 4,
+      "rows": 144,
+      "predicted_congested": 0,
+      "correct": 144,
+      "batch_accuracy": 1.0
+    },
+    {
+      "batch_id": 5,
+      "rows": 144,
+      "predicted_congested": 0,
+      "correct": 144,
+      "batch_accuracy": 1.0
+    },
+    {
+      "batch_id": 6,
+      "rows": 144,
+      "predicted_congested": 0,
+      "correct": 144,
+      "batch_accuracy": 1.0
+    },
+    {
+      "batch_id": 7,
+      "rows": 144,
+      "predicted_congested": 39,
+      "correct": 118,
+      "batch_accuracy": 0.8194
+    },
+    {
+      "batch_id": 8,
+      "rows": 144,
+      "predicted_congested": 103,
+      "correct": 125,
+      "batch_accuracy": 0.8681
+    },
+    {
+      "batch_id": 9,
+      "rows": 144,
+      "predicted_congested": 94,
+      "correct": 109,
+      "batch_accuracy": 0.7569
+    },
+    {
+      "batch_id": 10,
+      "rows": 144,
+      "predicted_congested": 24,
+      "correct": 126,
+      "batch_accuracy": 0.875
+    },
+    {
+      "batch_id": 11,
+      "rows": 144,
+      "predicted_congested": 7,
+      "correct": 138,
+      "batch_accuracy": 0.9583
+    },
+    {
+      "batch_id": 12,
+      "rows": 144,
+      "predicted_congested": 0,
+      "correct": 142,
+      "batch_accuracy": 0.9861
+    },
+    {
+      "batch_id": 13,
+      "rows": 144,
+      "predicted_congested": 4,
+      "correct": 141,
+      "batch_accuracy": 0.9792
+    },
+    {
+      "batch_id": 14,
+      "rows": 144,
+      "predicted_congested": 5,
+      "correct": 135,
+      "batch_accuracy": 0.9375
+    },
+    {
+      "batch_id": 15,
+      "rows": 144,
+      "predicted_congested": 23,
+      "correct": 125,
+      "batch_accuracy": 0.8681
+    },
+    {
+      "batch_id": 16,
+      "rows": 144,
+      "predicted_congested": 84,
+      "correct": 123,
+      "batch_accuracy": 0.8542
+    },
+    {
+      "batch_id": 17,
+      "rows": 144,
+      "predicted_congested": 97,
+      "correct": 137,
+      "batch_accuracy": 0.9514
+    },
+    {
+      "batch_id": 18,
+      "rows": 144,
+      "predicted_congested": 108,
+      "correct": 118,
+      "batch_accuracy": 0.8194
+    },
+    {
+      "batch_id": 19,
+      "rows": 144,
+      "predicted_congested": 44,
+      "correct": 122,
+      "batch_accuracy": 0.8472
+    },
+    {
+      "batch_id": 20,
+      "rows": 144,
+      "predicted_congested": 3,
+      "correct": 143,
+      "batch_accuracy": 0.9931
+    },
+    {
+      "batch_id": 21,
+      "rows": 144,
+      "predicted_congested": 0,
+      "correct": 144,
+      "batch_accuracy": 1.0
+    },
+    {
+      "batch_id": 22,
+      "rows": 144,
+      "predicted_congested": 0,
+      "correct": 144,
+      "batch_accuracy": 1.0
+    },
+    {
+      "batch_id": 23,
+      "rows": 108,
+      "predicted_congested": 0,
+      "correct": 108,
+      "batch_accuracy": 1.0
+    }
+  ]
+}

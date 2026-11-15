@@ -1,0 +1,91 @@
+{
+  "info": {
+    "train_rows": 169308,
+    "test_rows": 37980,
+    "train_pos_pct": 13.65,
+    "test_pos_pct": 11.89
+  },
+  "classification": {
+    "Baseline (persistence)": {
+      "tp": 3796,
+      "tn": 32748,
+      "fp": 718,
+      "fn": 718,
+      "accuracy": 0.9622,
+      "precision": 0.8409,
+      "recall": 0.8409,
+      "f1": 0.8409,
+      "auc": null,
+      "pr_auc": null
+    },
+    "Logistic Regression": {
+      "tp": 4136,
+      "tn": 32237,
+      "fp": 1229,
+      "fn": 378,
+      "accuracy": 0.9577,
+      "precision": 0.7709,
+      "recall": 0.9163,
+      "f1": 0.8373,
+      "auc": 0.9899,
+      "pr_auc": 0.9375
+    },
+    "Random Forest": {
+      "tp": 4226,
+      "tn": 32251,
+      "fp": 1215,
+      "fn": 288,
+      "accuracy": 0.9604,
+      "precision": 0.7767,
+      "recall": 0.9362,
+      "f1": 0.849,
+      "auc": 0.9912,
+      "pr_auc": 0.9432
+    },
+    "Gradient Boosted Trees": {
+      "tp": 4207,
+      "tn": 32349,
+      "fp": 1117,
+      "fn": 307,
+      "accuracy": 0.9625,
+      "precision": 0.7902,
+      "recall": 0.932,
+      "f1": 0.8553,
+      "auc": 0.9925,
+      "pr_auc": 0.9528
+    }
+  },
+  "best": "Gradient Boosted Trees",
+  "regression": {
+    "rmse": 0.0571,
+    "mae": 0.0401,
+    "r2": 0.9124,
+    "baseline_rmse": 0.0694,
+    "baseline_mae": 0.0476
+  },
+  "features": [
+    "vehicle_count",
+    "avg_speed_kmph",
+    "occupancy_pct",
+    "queue_length_m",
+    "speed_ratio",
+    "free_flow_kmph",
+    "minute_of_day",
+    "hour",
+    "dow",
+    "is_weekend",
+    "is_holiday",
+    "is_peak",
+    "incident_flag",
+    "speed_ratio_lag1",
+    "speed_ratio_lag2",
+    "speed_ratio_lag3",
+    "count_lag1",
+    "count_lag3",
+    "count_roll30",
+    "speed_roll30",
+    "speed_trend",
+    "weather_(onehot)",
+    "zone_(onehot)"
+  ]
+}

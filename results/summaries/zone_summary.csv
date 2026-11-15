@@ -1,0 +1,8 @@
+zone,avg_speed,avg_queue_m,congestion_rate_pct
+Central,28.53,25.0,20.0
+Commercial,34.1,19.3,17.14
+Temple,28.46,17.1,16.21
+Industrial,40.69,11.3,12.13
+Highway,53.74,6.3,7.55
+Residential,36.55,6.0,7.41
+Suburban,50.71,2.3,2.75

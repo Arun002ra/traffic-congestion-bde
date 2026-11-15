@@ -1,0 +1,4 @@
+weather,records,avg_speed,avg_speed_ratio,congestion_rate_pct
+Rain,20400,26.36,0.606,41.79
+Cloudy,121296,38.08,0.886,9.88
+Clear,65664,37.58,0.874,10.84

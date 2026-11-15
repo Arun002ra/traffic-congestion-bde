@@ -1,0 +1,15 @@
+# Python & PySpark
+__pycache__/
+*.py[cod]
+*$py.class
+*.log
+
+# Checkpoints & raw cache
+data/chk/
+data/stream_input/
+.venv/
+env/
+
+# OS files
+.DS_Store
+Thumbs.db

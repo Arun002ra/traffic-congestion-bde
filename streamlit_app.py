@@ -211,10 +211,7 @@ with st.sidebar:
             "4. Exploratory Analysis",
             "5. Junction Analytics",
             "6. Congestion Prediction",
-            "7. Model Evaluation",
-            "8. Live Traffic Monitoring",
-            "9. Reports & Exports",
-            "10. About Project"
+            "7. Live Traffic Monitoring"
         ],
         index=0
     )
@@ -765,96 +762,9 @@ elif page == "6. Congestion Prediction":
 
 
 # ==============================================================================
-# PAGE 7: MODEL EVALUATION & MLLIB COMPARISON
+# PAGE 7: LIVE TRAFFIC MONITORING (STRUCTURED STREAMING)
 # ==============================================================================
-elif page == "7. Model Evaluation":
-    st.markdown("""
-        <div class="dashboard-title">Spark MLlib Model Evaluation</div>
-        <div class="dashboard-subtitle">Comparison of Persistence Baseline, Logistic Regression, Random Forest, and GBT</div>
-    """, unsafe_allow_html=True)
-
-    mr = load_model_results()
-    clf_dict = mr.get("classification", {})
-
-    # Comparison Table
-    table_data = []
-    for model_name, m in clf_dict.items():
-        table_data.append({
-            "Model": model_name,
-            "Accuracy": f"{m.get('accuracy', 0)*100:.2f}%",
-            "Precision": f"{m.get('precision', 0)*100:.2f}%",
-            "Recall": f"{m.get('recall', 0)*100:.2f}%",
-            "F1-Score": f"{m.get('f1', 0):.4f}",
-            "ROC-AUC": f"{m.get('auc', 0):.4f}" if m.get('auc') else "—",
-            "PR-AUC": f"{m.get('pr_auc', 0):.4f}" if m.get('pr_auc') else "—"
-        })
-
-    st.markdown("#### 🏆 Classifier Performance on Hold-out Test Set (19–29 Sep 2026)")
-    st.dataframe(pd.DataFrame(table_data), use_container_width=True)
-
-    c1, c2 = st.columns(2)
-    with c1:
-        # Confusion matrix for GBT
-        gbt = clf_dict.get("Gradient Boosted Trees", {"tp": 4207, "tn": 32349, "fp": 1117, "fn": 307})
-        cm_matrix = [[gbt.get("tn", 32349), gbt.get("fp", 1117)],
-                     [gbt.get("fn", 307), gbt.get("tp", 4207)]]
-        fig_cm = px.imshow(
-            cm_matrix,
-            x=["Predicted Free-flow", "Predicted Congested"],
-            y=["Actual Free-flow", "Actual Congested"],
-            color_continuous_scale="Blues",
-            text_auto=True,
-            title="<b>GBT Confusion Matrix (Test Set: 37,980 rows)</b>"
-        )
-        fig_cm.update_layout(height=350)
-        st.plotly_chart(fig_cm, use_container_width=True)
-
-    with c2:
-        # Feature Importance
-        fi_path = os.path.join(METRICS_DIR, "feature_importance.json")
-        if os.path.exists(fi_path):
-            with open(fi_path) as f:
-                fi = json.load(f)
-            names = fi.get("names", [])[:10]
-            scores = fi.get("Gradient Boosted Trees", [])[:10]
-            fi_df = pd.DataFrame({"Feature": names, "Importance": scores}).sort_values("Importance", ascending=True)
-
-            fig_fi = px.bar(
-                fi_df,
-                x="Importance",
-                y="Feature",
-                orientation='h',
-                color="Importance",
-                color_continuous_scale="Viridis",
-                title="<b>Top 10 GBT Feature Importances</b>"
-            )
-            fig_fi.update_layout(height=350, showlegend=False)
-            st.plotly_chart(fig_fi, use_container_width=True)
-
-    st.markdown("---")
-    st.markdown("#### 📈 Random Forest Regressor: Predicting Future Speed Ratio")
-    reg = mr.get("regression", {"rmse": 0.0571, "mae": 0.0401, "r2": 0.9124, "baseline_rmse": 0.0694, "baseline_mae": 0.0476})
-    r1, r2, r3, r4 = st.columns(4)
-    r1.metric("Model RMSE", f"{reg.get('rmse', 0.0571):.4f}", f"-18% vs Baseline ({reg.get('baseline_rmse', 0.0694):.4f})")
-    r2.metric("Model MAE", f"{reg.get('mae', 0.0401):.4f}", f"-16% vs Baseline ({reg.get('baseline_mae', 0.0476):.4f})")
-    r3.metric("R² Score", f"{reg.get('r2', 0.9124):.4f}", "High Predictive Power")
-    r4.metric("Horizon", "15 minutes ahead", "Three 5-min slots")
-
-    reg_sample_path = os.path.join(PREDICTIONS_DIR, "regression_sample.csv")
-    if os.path.exists(reg_sample_path):
-        sample_reg_df = pd.read_csv(reg_sample_path)
-        fig_r = go.Figure()
-        fig_r.add_trace(go.Scatter(y=sample_reg_df['label_future_ratio'], mode='lines', name="Actual Speed Ratio (t+15m)", line=dict(color="#2980B9", width=2)))
-        fig_r.add_trace(go.Scatter(y=sample_reg_df['prediction'], mode='lines', name="RF Predicted Speed Ratio", line=dict(color="#E67E22", width=2, dash='dot')))
-        fig_r.add_hline(y=0.60, line_dash="dash", line_color="red", annotation_text="Congestion Threshold (0.60)")
-        fig_r.update_layout(title="<b>Sample Regression: Actual vs Predicted Speed Ratio (Central Bus Stand - 24 Sep 2026)</b>", height=320)
-        st.plotly_chart(fig_r, use_container_width=True)
-
-
-# ==============================================================================
-# PAGE 8: LIVE TRAFFIC MONITORING (STRUCTURED STREAMING)
-# ==============================================================================
-elif page == "8. Live Traffic Monitoring":
+elif page == "7. Live Traffic Monitoring":
     st.markdown("""
         <div class="dashboard-title">Live Traffic Monitoring & Spark Structured Streaming</div>
         <div class="dashboard-subtitle">Simulated micro-batch feed (2026-09-29) scored with saved GBT model</div>
@@ -887,59 +797,3 @@ elif page == "8. Live Traffic Monitoring":
         b_scores['Status'] = b_scores['prediction'].map({1.0: "CONGESTED", 0.0: "NORMAL"})
         st.dataframe(b_scores, use_container_width=True)
 
-
-# ==============================================================================
-# PAGE 9: REPORTS AND EXPORTS
-# ==============================================================================
-elif page == "9. Reports & Exports":
-    st.markdown("""
-        <div class="dashboard-title">Reports & Data Exports</div>
-        <div class="dashboard-subtitle">Export processed summary tables, model parameters, and Tableau-ready CSVs</div>
-    """, unsafe_allow_html=True)
-
-    st.markdown("#### 📥 Download Processed Tables")
-    summaries = [f for f in os.listdir(SUMMARIES_DIR) if f.endswith('.csv')]
-    for s_file in summaries:
-        s_path = os.path.join(SUMMARIES_DIR, s_file)
-        with open(s_path, "rb") as f:
-            st.download_button(
-                label=f"Download {s_file}",
-                data=f,
-                file_name=s_file,
-                mime="text/csv"
-            )
-
-
-# ==============================================================================
-# PAGE 10: ABOUT PROJECT
-# ==============================================================================
-elif page == "10. About Project":
-    st.markdown("""
-        <div class="dashboard-title">About This Project</div>
-        <div class="dashboard-subtitle">Academic Details, Big Data Architecture & Traffic OS Integration</div>
-    """, unsafe_allow_html=True)
-
-    st.markdown("""
-    ### 🎓 SRM INSTITUTE OF SCIENCE AND TECHNOLOGY
-    **TIRUCHIRAPPALLI - 621105**  
-    **Department of Information Technology (Section A)**  
-    **Course:** Big Data Essentials (Apache Spark)  
-    **Academic Year:** 2026–2027  
-
-    #### 👨‍🏫 Mentor & Guide
-    - **Dr. Yuvaraj D**, Associate Professor / IT
-
-    #### 👥 Project Team Members
-    1. **Vishal Kumar Yadav** (RA2411008050010)
-    2. **S Arunraj** (RA2411008050005)
-    3. **Edwin Joe M** (RA2411008050034)
-    4. **Sahil Chouhan** (RA2411008050008)
-
-    ---
-
-    ### 🏗️ Big Data Architecture & Rationale
-    - **Single Unified Engine**: Apache Spark is utilized for batch ETL (`PySpark DataFrames`), distributed window functions, machine learning (`Spark MLlib`), and stream scoring (`Structured Streaming`).
-    - **Leak-Free Time Split**: Training data (1 Aug – 18 Sep 2026) is strictly partitioned from testing data (19–29 Sep 2026) using calendar dates rather than random shuffling.
-    - **Persistence Baseline**: Models are measured against a persistence baseline ($t+15\\text{m} = t$). While baseline accuracy is high (96.2%), GBT increases recall from 84.1% to 93.2%, successfully catching 411 more upcoming traffic jams.
-    - **Relation to Traffic OS**: Connects with the team's previous semester project (*Traffic OS: Real-Time Traffic Light Scheduling System*) by supplying 15-minute advance notice to the green-phase optimizer.
-    """)
